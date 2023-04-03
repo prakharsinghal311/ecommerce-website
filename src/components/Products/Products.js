@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+
+import ProductItems from "./ProductItems";
 
 const productsArr = [
   {
+    id: Math.random(),
     title: "Colors",
 
     price: 100,
@@ -11,6 +13,7 @@ const productsArr = [
   },
 
   {
+    id: Math.random(),
     title: "Black and white Colors",
 
     price: 50,
@@ -19,6 +22,7 @@ const productsArr = [
   },
 
   {
+    id: Math.random(),
     title: "Yellow and Black Colors",
 
     price: 70,
@@ -27,6 +31,7 @@ const productsArr = [
   },
 
   {
+    id: Math.random(),
     title: "Blue Color",
 
     price: 100,
@@ -36,27 +41,17 @@ const productsArr = [
 ];
 
 const Counter = () => {
-  return (
-    <>
-      <Container className="mt-3">
-        <Row>
-          {productsArr.map((item) => (
-            <Col xs={6}>
-              <Card className="shadow-sm">
-                <Card.Body>
-                  <>
-                    <h3>{item.title}</h3>,<h3>{item.price}</h3>,
-                    <img src={item.imageUrl} alt="" />
-                  </>
-                  <Button variant="primary">Add to Cart</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </>
-  );
+  const products = productsArr.map((item) => (
+    <ProductItems
+      key={item.id}
+      id={item.id}
+      title={item.title}
+      price={item.price}
+      imageUrl={item.imageUrl}
+    />
+  ));
+
+  return <ul>{products}</ul>;
 };
 
 export default Counter;
