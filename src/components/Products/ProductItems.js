@@ -3,11 +3,14 @@ import CartCntx from "../../store/cart-context";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 const ProductItems = (props) => {
+  //const [quantity, setQuantity] = useState(0);
   const cartcntx = useContext(CartCntx);
 
   const addItemToCart = (event) => {
+    console.log(props.quantity);
     event.preventDefault();
-    cartcntx.addItem({ ...props });
+    //setQuantity((quantity) => quantity + 1);
+    cartcntx.addItem({ ...props, quantity: 1 });
   };
 
   return (
