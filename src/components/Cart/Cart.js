@@ -21,7 +21,7 @@ const Cart = (props) => {
   return (
     <Card>
       <CardGroup>
-        <Container fluid="sm">
+        <Container size="sm">
           <Row>
             <Col>Cart</Col>
             <Col>
@@ -42,7 +42,7 @@ const Cart = (props) => {
                   {cartcntx.items.length > 0 &&
                     cartcntx.items.map((item) => {
                       return (
-                        <tr>
+                        <tr key={item.id}>
                           <td>
                             <img src={item.imageUrl} alt="" />
                           </td>

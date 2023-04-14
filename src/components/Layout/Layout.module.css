@@ -1,0 +1,9 @@
+.lowerCard {
+  position: fixed;
+  bottom: 0;
+}
+
+.links {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

@@ -1,18 +1,20 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import classes from "./CardUI.module.css";
 
 function BgColorExample() {
   return (
     <>
       <Card
+        className={classes.card}
         bg={"secondary"}
         key={"secondary"}
         text={"white"}
-        style={{ width: "90rem" }}
-        className="mb-2"
       >
         <Card.Body>
-          <Card.Title> the Generics </Card.Title>
+          <Card.Title>
+            <h1>The Generics</h1>
+          </Card.Title>
         </Card.Body>
       </Card>
     </>

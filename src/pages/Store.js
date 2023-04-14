@@ -1,16 +1,28 @@
-import React from "react";
-import { Container, Navbar } from "react-bootstrap";
+import React, { useState } from "react";
+import Products from "../components/Products/Products";
+import HeaderCartButton from "../components/Layout/HeaderCartButton";
+import Cart from "../components/Cart/Cart";
+import { Navbar, Container } from "react-bootstrap";
 
 const Store = () => {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = (event) => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = (event) => {
+    setCartIsShown(false);
+  };
   return (
     <>
-      <Navbar bg="dark" expand="sm" variant="dark">
-        <Container>
-          <Navbar.Brand>HOME</Navbar.Brand>
-          <Navbar.Brand>STORE</Navbar.Brand>
-          <Navbar.Brand>ABOUT</Navbar.Brand>
-        </Container>
-      </Navbar>
+      <Container>
+        <Navbar>
+          <HeaderCartButton onClick={showCartHandler} />
+        </Navbar>
+        {cartIsShown && <Cart onBack={hideCartHandler} />}
+        <Products />
+      </Container>
     </>
   );
 };
