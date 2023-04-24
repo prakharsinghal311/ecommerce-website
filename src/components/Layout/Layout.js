@@ -1,8 +1,8 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { Container, Navbar } from "react-bootstrap";
-import BgColorExample from "../UI/CardUI";
 import LowerCard from "../UI/LowerCard";
 import classes from "./Layout.module.css";
+import CardUI from "../UI/CardUI";
 
 const Layout = () => {
   return (
@@ -10,17 +10,28 @@ const Layout = () => {
       <Navbar bg="dark" expand="sm" variant="dark">
         <Container>
           <Navbar.Brand className={classes.links}>
-            <NavLink to="/home">HOME</NavLink>
+            <NavLink activeclassname={classes.active} to="/home">
+              HOME
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Brand className={classes.links}>
-            <NavLink to="/">STORE</NavLink>
+            <NavLink activeclassname={classes.active} to="/">
+              STORE
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Brand className={classes.links}>
-            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink activeclassname={classes.active} to="/about">
+              ABOUT
+            </NavLink>
+          </Navbar.Brand>
+          <Navbar.Brand className={classes.links}>
+            <NavLink activeclassname={classes.active} to="/ContactUS">
+              Contact US
+            </NavLink>
           </Navbar.Brand>
         </Container>
       </Navbar>
-      <BgColorExample />
+      <CardUI />
       <Outlet />
       <LowerCard className={classes.lowerCard} />
     </>

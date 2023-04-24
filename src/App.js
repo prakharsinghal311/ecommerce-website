@@ -5,6 +5,7 @@ import AboutPage from "./pages/About";
 import Store from "./pages/Store";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home.js";
+import ContactUs from "./pages/ContactUs";
 import CardProvider from "./store/CartProvider";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
               <Route index element={<Store />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/ContactUS" element={<ContactUs />} />
             </Route>
           </Routes>
         </BrowserRouter>

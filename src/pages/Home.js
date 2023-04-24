@@ -4,16 +4,6 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <>
-      <Button className={classes.button} variant="outline-primary" size="lg">
-        Get Out Latest Album
-      </Button>
-      <button
-        className={classes.playButton}
-        variant="outline-primary"
-        size="lg"
-      >
-        <h3>&gt;</h3>
-      </button>
       <center>
         <h2>TOURS</h2>
       </center>

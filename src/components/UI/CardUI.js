@@ -1,8 +1,10 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import classes from "./CardUI.module.css";
+import { useLocation } from "react-router-dom";
 
-function BgColorExample() {
+function CardUI() {
+  const location = useLocation();
   return (
     <>
       <Card
@@ -15,10 +17,28 @@ function BgColorExample() {
           <Card.Title>
             <h1>The Generics</h1>
           </Card.Title>
+          {location.pathname === "/home" && (
+            <div>
+              <Button
+                className={classes.button}
+                variant="outline-primary"
+                size="lg"
+              >
+                Get Out Latest Album
+              </Button>
+              <button
+                className={classes.playButton}
+                variant="outline-primary"
+                size="lg"
+              >
+                <h3>&gt;</h3>
+              </button>
+            </div>
+          )}
         </Card.Body>
       </Card>
     </>
   );
 }
 
-export default BgColorExample;
+export default CardUI;
