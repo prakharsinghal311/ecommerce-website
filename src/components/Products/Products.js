@@ -1,5 +1,3 @@
-import React from "react";
-
 import ProductItems from "./ProductItems";
 
 const productsArr = [
@@ -41,13 +39,14 @@ const productsArr = [
 ];
 
 const Counter = () => {
-  const products = productsArr.map((item) => (
+  const products = productsArr.map((item, index) => (
     <ProductItems
       key={item.id}
       id={item.id}
       title={item.title}
       price={item.price}
       imageUrl={item.imageUrl}
+      productId={`P${index + 1}`}
     />
   ));
 

@@ -7,6 +7,7 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home.js";
 import ContactUs from "./pages/ContactUs";
 import CardProvider from "./store/CartProvider";
+import ProductDetail from "./pages/ProductDetail";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
               <Route index element={<Store />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/:productId" element={<ProductDetail />} />
               <Route path="/ContactUS" element={<ContactUs />} />
             </Route>
           </Routes>

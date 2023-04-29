@@ -1,5 +1,4 @@
 import { Button, Container, Row, Col, Table } from "react-bootstrap";
-import classes from "./Home.module.css";
 
 const Home = () => {
   return (
