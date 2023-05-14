@@ -8,6 +8,7 @@ import Home from "./pages/Home.js";
 import ContactUs from "./pages/ContactUs";
 import CardProvider from "./store/CartProvider";
 import ProductDetail from "./pages/ProductDetail";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Route path="/home" element={<Home />} />
               <Route path="/:productId" element={<ProductDetail />} />
               <Route path="/ContactUS" element={<ContactUs />} />
+              <Route path="/login" element={<Login />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -25,6 +25,11 @@ const Layout = () => {
             </NavLink>
           </Navbar.Brand>
           <Navbar.Brand className={classes.links}>
+            <NavLink activeclassname={classes.active} to="/login">
+              Login
+            </NavLink>
+          </Navbar.Brand>
+          <Navbar.Brand className={classes.links}>
             <NavLink activeclassname={classes.active} to="/ContactUS">
               Contact US
             </NavLink>
