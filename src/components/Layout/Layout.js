@@ -15,7 +15,7 @@ const Layout = () => {
             </NavLink>
           </Navbar.Brand>
           <Navbar.Brand className={classes.links}>
-            <NavLink activeclassname={classes.active} to="/">
+            <NavLink activeclassname={classes.active} to="/store">
               STORE
             </NavLink>
           </Navbar.Brand>
