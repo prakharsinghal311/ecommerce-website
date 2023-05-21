@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import axios from "axios";
 import {
   Button,
   Card,
@@ -12,10 +13,60 @@ import {
 import CartCntx from "../../store/cart-context";
 
 const Cart = (props) => {
+  const emailid = localStorage.getItem("email");
+  const newemailid = emailid.replace("@", "");
+  const useremailid = newemailid.replace(".", "");
+
   const cartcntx = useContext(CartCntx);
 
   const removeItemInCart = (id) => {
+    let flag = 0;
+    const productToBeDeleteIndex = cartcntx.items.findIndex((i) => i.id === id);
+    const userData_id = cartcntx.items[productToBeDeleteIndex]._id;
+
+    if (cartcntx.items[productToBeDeleteIndex].quantity === 1) {
+      flag = 1;
+    }
+
     cartcntx.removeItem(id);
+
+    if (flag === 1) {
+      axios
+        .delete(
+          `https://crudcrud.com/api/d69be10218474dfbb3cbdb5f61501239/cart${useremailid}/${userData_id}`
+        )
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axios
+        .get(
+          `https://crudcrud.com/api/d69be10218474dfbb3cbdb5f61501239/cart${useremailid}`
+        )
+        .then((response) => {
+          response.data[productToBeDeleteIndex].quantity =
+            parseInt(response.data[productToBeDeleteIndex].quantity) - 1;
+          delete response.data[productToBeDeleteIndex]._id;
+
+          axios
+            .put(
+              `https://crudcrud.com/api/d69be10218474dfbb3cbdb5f61501239/cart${useremailid}/${userData_id}`,
+              response.data[productToBeDeleteIndex]
+            )
+            .then((response) => {
+              console.log(response.data);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (

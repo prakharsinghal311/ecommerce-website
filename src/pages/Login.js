@@ -43,6 +43,7 @@ const Login = () => {
     })
       .then((res) => {
         if (res.ok) {
+          localStorage.setItem("email", enteredEmail);
           return res.json();
         } else {
           return res.json().then((data) => {

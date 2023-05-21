@@ -1,6 +1,5 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { Container, Navbar } from "react-bootstrap";
-import LowerCard from "../UI/LowerCard";
 import classes from "./Layout.module.css";
 import CardUI from "../UI/CardUI";
 
@@ -15,7 +14,7 @@ const Layout = () => {
             </NavLink>
           </Navbar.Brand>
           <Navbar.Brand className={classes.links}>
-            <NavLink activeclassname={classes.active} to="/store">
+            <NavLink activeclassname={classes.active} to="/">
               STORE
             </NavLink>
           </Navbar.Brand>
@@ -38,7 +37,6 @@ const Layout = () => {
       </Navbar>
       <CardUI />
       <Outlet />
-      <LowerCard className={classes.lowerCard} />
     </>
   );
 };

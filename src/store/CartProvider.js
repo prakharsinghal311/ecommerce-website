@@ -1,12 +1,14 @@
 import { useState } from "react";
 import CartContext from "./cart-context";
+import axios from "axios";
 
 const CardProvider = (props) => {
   const [items, setItems] = useState([]);
 
   const addItemToCardHandler = (item) => {
-    const existingItemIndex = items.findIndex((i) => i.id === item.id);
-
+    const existingItemIndex = items.findIndex(
+      (i) => i.productId === item.productId
+    );
     if (existingItemIndex === -1) {
       setItems([...items, item]);
     } else {
