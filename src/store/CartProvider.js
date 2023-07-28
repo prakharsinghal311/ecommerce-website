@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CartContext from "./cart-context";
-import axios from "axios";
 
 const CardProvider = (props) => {
   const [items, setItems] = useState([]);

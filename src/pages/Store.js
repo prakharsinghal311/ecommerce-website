@@ -18,7 +18,7 @@ const Store = () => {
   useEffect(() => {
     axios
       .get(
-        `https://crudcrud.com/api/d69be10218474dfbb3cbdb5f61501239/cart${useremailid}`
+        `https://crudcrud.com/api/804e23dcd8ed4d89b57615107bbd986c/cart${useremailid}`
       )
       .then((response) => {
         //console.log(response.data);
